@@ -1,0 +1,2 @@
+spring.submit arun -n1 --ntasks-per-node=1 --gres=gpu:1 --cpus-per-task=4 --job-name R-SC210077.00107evaluate --gpu-type 1080ti\
+ "python /mnt/lustre/zhangshaofeng/workspace/m-mix-simclr/main.py --dataset cifar10 --threshold 0.9"
