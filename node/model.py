@@ -50,7 +50,7 @@ class GCN(nn.Module):
                 attention = torch.where(adj > 0, attn_mx, zero_vec)
                 attention = F.softmax(attention, dim=-1)
                 attention = F.dropout(attention, 0.1, training=training)
-                out = self.to_v(torch.bmm(adj, out))
+                out = self.to_v(torch.bmm(attention, out))
                 return self.act(out), div_loss
 #                 out = torch.bmm(adj, seq_fts)
 #                 return self.act(out), 0
